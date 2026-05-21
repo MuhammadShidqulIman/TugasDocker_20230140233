@@ -6,10 +6,24 @@
     <style>
         body { background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; height: 100vh; }
         .login-card { width: 100%; max-width: 400px; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: white; }
+
+        /* Tambahan style untuk mengatur ukuran dan posisi gambar */
+        .login-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%; /* Membuat gambar menjadi bulat, hapus jika ingin kotak */
+            margin: 0 auto 20px auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
 <div class="login-card">
+
+    <img th:src="@{/images/logo.png}" alt="Logo Sistem" class="login-logo"
+         onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
+
     <h3 class="text-center mb-4 fw-bold">Login Sistem</h3>
 
     <div th:if="${error}" class="alert alert-danger py-2" role="alert" th:text="${error}"></div>
